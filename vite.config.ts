@@ -4,6 +4,9 @@ import { VitePWA } from 'vite-plugin-pwa';
 
 // https://vite.dev/config/
 export default defineConfig({
+  // Allows GitHub Pages (served under /<repo>/) to resolve assets correctly,
+  // while local dev/preview keep serving from the root.
+  base: process.env.VITE_BASE ?? '/',
   plugins: [
     react(),
     VitePWA({
